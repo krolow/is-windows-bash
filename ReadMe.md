@@ -9,7 +9,7 @@ $ npm install is-windows-bash --save
 ```
 
 ```javascript
-const isWindowsBash = require('is-windows-bash);
+const isWindowsBash = require('is-windows-bash');
 
 if (isWindowsBash()) {
   console.log('Welcome to the future');
