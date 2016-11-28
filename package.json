@@ -1,6 +1,6 @@
 {
   "name": "is-windows-bash",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Determines if Node is running on Windows Bash (WSL)",
   "license": "MIT",
   "repository": "ianmitchell/is-windows-bash",
