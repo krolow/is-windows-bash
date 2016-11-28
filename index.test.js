@@ -33,16 +33,23 @@ describe('Handles operating systems correctly', () => {
   test('Should return false on non-WSL result', () => {
     setProcessVars();
     fs.readFileSync = jest.fn().mockReturnValue(PROC_VERSION_STUBS.DEBIAN);
-    
+
     expect(isWindowsBash()).toBe(false);
   });
+});
 
+describe('Handles edge cases correctly', () => {
   test("Should return false if file doesn't exist", () => {
     setProcessVars();
     fs.readFileSync = jest.fn().mockImplementation(() => {
       throw new Error("ENOENT: no such file or directory, open '/proc/version'");
     });
-    
+
     expect(isWindowsBash()).toBe(false);
   });
+
+  test("Should return false without a process variable", () => {
+    process = {};
+    expect(isWindowsBash()).toBe(false);
+  })
 });
