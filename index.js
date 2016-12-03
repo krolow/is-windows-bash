@@ -5,6 +5,7 @@ function isValidEnvironment() {
           process.platform &&
           process.platform.toLowerCase() === 'linux' &&
           process.env &&
+          process.env.SHELL &&
           process.env.SHELL.toLowerCase() === '/bin/bash');
 }
 
